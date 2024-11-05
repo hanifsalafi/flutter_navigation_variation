@@ -4,7 +4,7 @@ import 'package:animated_notch_nav_bar/constants/color.dart';
 class ButtonNotch extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    var dotPoint = Offset(size.width / 2, 2);
+    var dotPoint = Offset(size.width / 2, 0);
 
     var paint_1 = Paint()
       ..color = bgColor
@@ -18,7 +18,8 @@ class ButtonNotch extends CustomPainter {
 
     path.moveTo(0, 0);
     path.quadraticBezierTo(7.5, 0, 12, 5);
-    path.quadraticBezierTo(size.width / 2, size.height / 2, size.width - 12, 5);
+    path.quadraticBezierTo(
+        size.width / 2, size.height / 2 - 10, size.width - 12, 5);
     path.quadraticBezierTo(size.width - 7.5, 0, size.width, 0);
     path.close();
 

@@ -17,4 +17,4 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Screenshot
 
-[![SyHGM.gif](https://s11.gifyu.com/images/SyHGM.gif)](https://gifyu.com/image/SyHGM)
+<img src="https://s11.gifyu.com/images/SyHGM.gif" alt="SyHGM" style="height: 500px;">
