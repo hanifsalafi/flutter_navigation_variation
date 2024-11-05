@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
 
 import 'package:animated_notch_nav_bar/constants/color.dart';
-import 'package:animated_notch_nav_bar/constants/text_style.dart';
 import 'package:animated_notch_nav_bar/data/model.dart';
 import 'package:animated_notch_nav_bar/widgets/custom_paint.dart';
+import 'package:animated_notch_nav_bar/pages/home_page.dart';
+import 'package:animated_notch_nav_bar/pages/search_page.dart';
+import 'package:animated_notch_nav_bar/pages/favorite_page.dart';
+import 'package:animated_notch_nav_bar/pages/profile_page.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MainPageState extends State<MainPage> {
+  // List of pages to navigate to
+  final List<Widget> pages = [
+    const HomePage(),
+    const SearchPage(),
+    const FavoritePage(),
+    const ProfilePage(),
+  ];
   int selectBtn = 0;
 
   @override
@@ -21,6 +31,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: bgColor,
       body: Stack(
         children: [
+          pages[selectBtn],
           Align(
             alignment: Alignment.bottomCenter,
             child: navigationBar(),
@@ -78,10 +89,10 @@ class _HomePageState extends State<HomePage> {
             alignment: Alignment.center,
             child: Container(
               padding: const EdgeInsets.only(bottom: 8.0),
-              child: Image.asset(
-                navBtn[i].imagePath,
+              child: Icon(
+                isActive ? navBtn[i].iconFilled : navBtn[i].iconOutlined,
                 color: isActive ? selectColor : black,
-                scale: 2,
+                size: isActive ? 33.0 : 30.0,
               ),
             ),
           ),
@@ -91,8 +102,11 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.only(bottom: 6.0),
               child: Text(
                 navBtn[i].name,
-                style:
-                    isActive ? btnText.copyWith(color: selectColor) : btnText,
+                style: TextStyle(
+                  color:
+                      isActive ? selectColor : Color.fromARGB(255, 27, 105, 6),
+                  fontWeight: isActive ? FontWeight.w800 : FontWeight.w500,
+                ),
               ),
             ),
           )

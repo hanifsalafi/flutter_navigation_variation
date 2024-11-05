@@ -1,18 +1,38 @@
+import 'package:flutter/material.dart';
+
 class Model {
   final int id;
-  final String imagePath;
+  final IconData iconFilled;
+  final IconData iconOutlined;
   final String name;
 
   Model({
     required this.id,
-    required this.imagePath,
+    required this.iconFilled,
+    required this.iconOutlined,
     required this.name,
   });
 }
 
 List<Model> navBtn = [
-  Model(id: 0, imagePath: 'assets/icons/home.png', name: 'Home'),
-  Model(id: 1, imagePath: 'assets/icons/search.png', name: 'Search'),
-  Model(id: 2, imagePath: 'assets/icons/heart.png', name: 'Like'),
-  Model(id: 3, imagePath: 'assets/icons/user.png', name: 'Profile'),
+  Model(
+      id: 0,
+      iconFilled: Icons.home,
+      iconOutlined: Icons.home_outlined,
+      name: 'Home'),
+  Model(
+      id: 1,
+      iconFilled: Icons.search,
+      iconOutlined: Icons.search_outlined,
+      name: 'Search'),
+  Model(
+      id: 2,
+      iconFilled: Icons.favorite,
+      iconOutlined: Icons.favorite_outline,
+      name: 'Favorite'),
+  Model(
+      id: 3,
+      iconFilled: Icons.person,
+      iconOutlined: Icons.person_outline,
+      name: 'Profile'),
 ];

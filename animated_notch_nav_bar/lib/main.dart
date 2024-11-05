@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:animated_notch_nav_bar/page/home_page.dart';
+import 'package:animated_notch_nav_bar/pages/main_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Navigation Nav Bar',
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const MainPage(),
     );
   }
 }
