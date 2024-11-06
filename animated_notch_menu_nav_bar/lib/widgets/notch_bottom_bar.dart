@@ -100,7 +100,7 @@ class AnimatedNotchBottomBar extends StatefulWidget {
   final double topMargin;
 
   const AnimatedNotchBottomBar({
-    Key? key,
+    super.key,
     required this.notchBottomBarController,
     required this.bottomBarItems,
     required this.onTap,
@@ -124,14 +124,14 @@ class AnimatedNotchBottomBar extends StatefulWidget {
     this.elevation = 5.0,
     this.showBottomRadius = true,
     this.showTopRadius = true,
-    this.notchGradient = null,
+    this.notchGradient,
     this.maxLine,
     this.textOverflow,
     this.textAlign,
     this.textDirection,
     this.topMargin = 10.0,
     this.circleMargin = 8.0,
-  }) : super(key: key);
+  });
 
   @override
   _AnimatedNotchBottomBarState createState() => _AnimatedNotchBottomBarState();
@@ -198,7 +198,7 @@ class _AnimatedNotchBottomBarState extends State<AnimatedNotchBottomBar>
     final double height = kHeight + kMargin * 2;
 
     return widget.bottomBarItems.length > maxCount
-        ? SizedBox.shrink()
+        ? const SizedBox.shrink()
         : AnimatedBuilder(
             animation: _animationController,
             builder: (BuildContext _, Widget? __) {
