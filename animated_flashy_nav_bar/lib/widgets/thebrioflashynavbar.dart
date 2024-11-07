@@ -26,7 +26,7 @@ class Thebrioflashynavbar extends StatelessWidget {
     this.animationDuration = const Duration(milliseconds: 250),
     this.animationCurve = Curves.linear,
     this.shadows = const [
-      const BoxShadow(
+      BoxShadow(
         color: Colors.black12,
         blurRadius: 3,
       ),
@@ -34,10 +34,8 @@ class Thebrioflashynavbar extends StatelessWidget {
     required this.items,
     required this.onItemSelected,
   }) {
-    assert(items != null);
     assert(height >= 55 && height <= 100);
     assert(items.length >= 2 && items.length <= 5);
-    assert(onItemSelected != null);
   }
 
   @override
@@ -55,7 +53,7 @@ class Thebrioflashynavbar extends StatelessWidget {
       child: SafeArea(
         child: Container(
           width: double.infinity,
-          height: this.height,
+          height: height,
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -97,10 +95,7 @@ class ThebrioflashynavbarItem {
     required this.activeColor,
     // this.activeColor = const Color(0xff272e81),
     this.inactiveColor = const Color(0xff9496c1),
-  }) {
-    assert(icon != null);
-    assert(title != null);
-  }
+  });
 }
 
 class _ThebrioflashynavbarItem extends StatelessWidget {
@@ -123,14 +118,7 @@ class _ThebrioflashynavbarItem extends StatelessWidget {
       required this.animationDuration,
       required this.animationCurve,
       required this.iconSize,
-      required this.titleSize})
-      : assert(isSelected != null),
-        assert(item != null),
-        assert(backgroundColor != null),
-        assert(animationDuration != null),
-        assert(animationCurve != null),
-        assert(iconSize != null),
-        assert(titleSize != null);
+      required this.titleSize});
 
   @override
   Widget build(BuildContext context) {
@@ -240,7 +228,7 @@ class _CustomPath extends CustomPainter {
     path.lineTo(0, 0);
     path.close();
 
-    paint.color = this.backgroundColor;
+    paint.color = backgroundColor;
     canvas.drawPath(path, paint);
   }
 
